@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFrom, addProduct, resetForm } from '../redux/slices/productslices';
 import Theader from '../Header/Theader';
@@ -6,6 +6,10 @@ import Theader from '../Header/Theader';
 import { Link } from 'react-router-dom';
 
 const Add = () => {
+  const [showCongras, setShowCongras] = useState(false);
+  const [showAdd, setShowAdd] = useState(true);
+  
+
   const dispatch = useDispatch();
   const { from } = useSelector((state) => state.product);
 
@@ -13,11 +17,24 @@ const Add = () => {
     dispatch(setFrom({ [e.target.name]: e.target.value }));
   };
 
+ 
+
   const handleAddProduct = () => {
     dispatch(addProduct());
-    console.log("Product Suscesfully added")
+   
+    setShowCongras(true); // Show the message
+    setShowAdd(false);
   
   };
+
+  const handleBack = ()=>{
+
+    setShowCongras(false); // Show the message
+    setShowAdd(true);
+  
+  }
+
+
 
   const handleResetForm = () => {
     dispatch(resetForm());
@@ -31,7 +48,9 @@ const Add = () => {
       <Theader />
       
       <div className='w-full h-[90vh] fixed right-0 bottom-0 border border-zinc-300 p-5 flex gap-5 flex-wrap justify-center'>
-        <div className='w-5/12 h-max border border-zinc-300 p-4'>
+      {showAdd && (
+      
+        <div className='w-5/12 add h-max border border-zinc-300 p-4'>
        
           <div className='w-full'>
             <label className='py-2'>Product Title</label>
@@ -84,6 +103,22 @@ const Add = () => {
             <span onClick={handleAddProduct} className='px-4 py-2 bg-indigo-600 cursor-pointer'>Add</span>
           </div>
         </div>
+   )}
+        {showCongras && (
+
+        <div className='w-5/12  h-max border border-zinc-300 p-4 flex flex-col items-center justify-center'>
+        <h1 className='text-5xl font-mono'> Congratulate</h1>
+        <p className='text-xl py-5'> Your Product is Successfly added</p>
+        <div className='w-full flex gap-10 items-center justify-end'>
+      
+        <Link to="/"> <span className='px-4 py-2 bg-indigo-600 rounded-lg cursor-pointer'>Back to Home</span> </Link> 
+        <p onClick={handleBack} className='px-4 py-2 bg-sky-600 rounded-lg cursor-pointer'> Add Again</p>
+        </div>
+
+        </div>
+)}
+
+
       </div>
     </div>
   );
