@@ -6,47 +6,53 @@ const initialState = {
   from: {},
   deta: [
     {
+      id:Math.floor(Math.random()*100000),
       title:"Thander Ice Polo Shirt",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"All Order",
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toLocaleString()
 
     },
-    {
+    { 
+      id:Math.floor(Math.random()*100000),
       title:"Thander Ice Polo Shirt",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Pending",
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toLocaleString()
     },
     {
+      id:Math.floor(Math.random()*100000),
       title:"Thander Ice Polo Shirt",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Review",
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toLocaleString()
     },
     {
+      id:Math.floor(Math.random()*100000),
       title:"Thander Ice Polo Shirt",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Success",
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toLocaleString()
     },
     {
+      id:Math.floor(Math.random()*100000),
       title:"Thander Ice Polo Shirt",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Complete",
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toLocaleString()
     },
     {
+      id:Math.floor(Math.random()*100000),
       title:"Thander Ice Polo Shirt",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Cancel",
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toLocaleString()
     },
 
 
@@ -62,7 +68,8 @@ const productSlice = createSlice({
       state.from = {
         ...state.from,
         ...action.payload,
-        timestamp: new Date().toISOString(), // Add timestamp automatically
+        timestamp: new Date().toLocaleString(), // Add timestamp automatically
+        id:Math.floor(Math.random()*100000),
     }},
     addProduct(state) {
       if (state.from && Object.keys(state.from).length > 0) {
@@ -74,14 +81,16 @@ const productSlice = createSlice({
     resetForm(state) {
       state.from = {};
     },
+
     deletIndex(state, action) {
       const indexToDelete = action.payload;
       state.deta.splice(indexToDelete, 1); // Remove the item at the specified index
     },
+  
 
     updateProduct(state, action) {
       const newData = action.payload;
-      const itemIndex = state.deta.findIndex(item => item.timestamp === newData.timestamp);
+      const itemIndex = state.deta.findIndex(item => item.id === newData.id);
 
       if (itemIndex !== -1) {
         state.deta[itemIndex] = { ...state.deta[itemIndex], ...newData };

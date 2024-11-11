@@ -15,6 +15,8 @@ const All = () => {
     dispatch(deletIndex(index));
   };
 
+console.log(deta)
+
   const statusStyles = {
     "All Order": "bg-green-600",
     "Pending": "bg-amber-600",

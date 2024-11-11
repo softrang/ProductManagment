@@ -12,9 +12,8 @@ const Allorder = () => {
   const [orderCount, setOrderCount] = useState(0);
 
   const onDelete = (index) => {
-    dispatch(deletIndex(index));
-  };
-
+    dispatch(deletIndex(index));; // Dispatches action with the `id` for deletion
+};
 
 
 
