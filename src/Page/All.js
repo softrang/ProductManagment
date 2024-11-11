@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Theader from '../Header/Theader';
 import { FaRegEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -8,6 +8,19 @@ import { deletIndex } from '../redux/slices/productslices';
 import { Link } from 'react-router-dom';
 
 const All = () => {
+
+  const [searchQuery, setSearchQuery] = useState('');
+
+
+
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value);
+    
+  };
+
+
+
+
   const dispatch = useDispatch();
   const deta = useSelector((state) => state.product.deta);
 
@@ -15,7 +28,7 @@ const All = () => {
     dispatch(deletIndex(index));
   };
 
-console.log(deta)
+
 
   const statusStyles = {
     "All Order": "bg-green-600",
@@ -28,7 +41,7 @@ console.log(deta)
 
   return (
     <div>
-      <Theader />
+      <Theader searchQuery={searchQuery} handleSearch={handleSearch} />
       <div className="w-full h-[90vh] border border-zinc-300 fixed bottom-0">
         <div className="w-full h-[5vh] flex items-center justify-center space-x-2 text-gray-600 text-sm font-medium">
           <span>
@@ -54,10 +67,14 @@ console.log(deta)
           </thead>
           <tbody>
             {deta?.length > 0 ? (
-              deta.map((item, index) => (
+               deta.filter((item) => 
+               item.title.toLowerCase().includes(searchQuery.toLowerCase())||
+               item.status.toLowerCase().includes(searchQuery.toLowerCase())
+      
+              ).reverse().map((item, index) => (
                 <tr key={index} className="hover:bg-zinc-900 hover:text-zinc-50 transition duration-200 ease-in-out border-b text-white">
                   <td className="px-4 py-2 text-center">{index + 1}</td>
-                  <td className="px-4 py-2 text-center">{item.title}</td>
+                  <td className="px-4 py-2 text-center  ">{item.title}</td>
                   <td className="px-4 py-2 text-center">{item.price}</td>
                   <td className="px-4 py-2 text-center">{item.timestamp || "2023-01-01"}</td>
                   <td className="px-4 py-2 text-center">{item.dic}</td>

@@ -8,7 +8,7 @@ import { deletIndex } from '../redux/slices/productslices';
 
 const PendingItem = ({ item, index, onDelete }) => (
   <div className="order-item pending mt-4 bg-white p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-    <h2 className="text-lg font-bold text-gray-800">{item.title}</h2>
+    <h2 className="text-lg font-bold text-gray-800 line-clamp-1 ">{item.title}</h2>
     <p className="text-base text-gray-600 line-clamp-2 ">{item.dic}</p>
     <p className="text-sm text-gray-800 font-medium">Price: {item.price}</p>
     <p className="text-sm text-gray-800 font-medium">Status: {item.status}</p>
@@ -50,7 +50,7 @@ const Pending = () => {
 
       {deta && deta.length > 0 ? (
         deta
-          .filter(item => item.status === "Pending")
+          .filter(item => item.status === "Pending").reverse()
           .map((item, index) => (
             <PendingItem key={index} item={item} index={index} onDelete={onDelete} />
           ))

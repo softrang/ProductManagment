@@ -7,7 +7,7 @@ const initialState = {
   deta: [
     {
       id:Math.floor(Math.random()*100000),
-      title:"Thander Ice Polo Shirt",
+      title:"Opna Women's Short Sleeve Moisture",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"All Order",
@@ -16,7 +16,7 @@ const initialState = {
     },
     { 
       id:Math.floor(Math.random()*100000),
-      title:"Thander Ice Polo Shirt",
+      title:"MBJ Women's Solid Short Sleeve Boat Neck V Shirt",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Pending",
@@ -24,7 +24,7 @@ const initialState = {
     },
     {
       id:Math.floor(Math.random()*100000),
-      title:"Thander Ice Polo Shirt",
+      title:"White Gold Plated Princess",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Review",
@@ -32,7 +32,7 @@ const initialState = {
     },
     {
       id:Math.floor(Math.random()*100000),
-      title:"Thander Ice Polo Shirt",
+      title:"Pierced Owl Rose Gold Plated Stainless Steel Double",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Success",
@@ -40,7 +40,7 @@ const initialState = {
     },
     {
       id:Math.floor(Math.random()*100000),
-      title:"Thander Ice Polo Shirt",
+      title:"DANVOUY Womens T Shirt Casual Cotton Short",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Complete",
@@ -48,7 +48,7 @@ const initialState = {
     },
     {
       id:Math.floor(Math.random()*100000),
-      title:"Thander Ice Polo Shirt",
+      title:"Mens Casual Slim Fit",
       dic:"Classic, lightweight, moisture-wicking polo shirt with sleek, athletic style.",
       price:"250$",
       status:"Cancel",

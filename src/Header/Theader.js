@@ -1,8 +1,10 @@
-import React from 'react'
+import React  from 'react'
 import { IoIosNotifications } from "react-icons/io";
 import { MdOutlineEmail } from "react-icons/md";
 
-const Theader = () => {
+const Theader = ({searchQuery, handleSearch}) => {
+
+
   return (
     <div className='w-full h-[10vh] flex items-center justify-center fixed top-0'>
         <div className='w-3/12'>
@@ -12,7 +14,9 @@ const Theader = () => {
         <div className="w-7/12 mx-auto">
   <input 
     type="search" 
-    placeholder="Search..." 
+    placeholder="Search...by title " 
+    value={searchQuery}
+    onChange={handleSearch}
     className="w-full h-[5vh] rounded-lg outline-none bg-gray-100 px-4 text-gray-800 placeholder-gray-500 uppercase border border-gray-300 shadow-sm   transition duration-200"
   />
 </div>

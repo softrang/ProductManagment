@@ -32,10 +32,10 @@ const Allorder = () => {
 
       {deta?.length > 0 ? (
         deta
-          .filter((item) => item.status === "All Order")
+          .filter((item) => item.status === "All Order").reverse()
           .map((item, index) => (
             <div key={index} className="all mt-4 bg-white p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-              <h2 className="text-lg font-bold text-gray-800">{item.title}</h2>
+              <h2 className="text-lg font-bold text-gray-800 line-clamp-1 ">{item.title}</h2>
               <p className="text-base text-gray-600 line-clamp-2  ">{item.dic}</p>
               <p className="text-sm text-gray-800 font-medium">Price: {item.price}</p>
               <p className="text-sm text-gray-800 font-medium">Status: {item.status}</p>
