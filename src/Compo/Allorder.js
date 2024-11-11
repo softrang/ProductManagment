@@ -11,8 +11,8 @@ const Allorder = () => {
   const deta = useSelector((state) => state.product.deta);
   const [orderCount, setOrderCount] = useState(0);
 
-  const onDelete = (index) => {
-    dispatch(deletIndex(index));; // Dispatches action with the `id` for deletion
+  const onDelete = (id) => {
+    dispatch(deletIndex(id));; // Dispatches action with the `id` for deletion
 };
 
 
@@ -45,7 +45,7 @@ const Allorder = () => {
                 <Link to="order/update" state={{ data: item, index }}>
                   <div className="text-xl p-2 cursor-pointer hover:text-blue-600 transform hover:scale-110 transition duration-200 ease-in-out" aria-label="Edit Order"><FaRegEdit /></div>
                 </Link>
-                <div onClick={() => onDelete(index)} className="text-xl p-2 cursor-pointer hover:text-red-600 transform hover:scale-110 transition duration-200 ease-in-out" aria-label="Delete Order"><MdDelete /></div>
+                <div onClick={() => onDelete(item.id)} className="text-xl p-2 cursor-pointer hover:text-red-600 transform hover:scale-110 transition duration-200 ease-in-out" aria-label="Delete Order"><MdDelete /></div>
               </div>
             </div>
           ))

@@ -21,7 +21,7 @@ const PendingItem = ({ item, index, onDelete }) => (
           <FaRegEdit />
         </div>
       </Link>
-      <div onClick={() => onDelete(index)} className="text-xl p-2 cursor-pointer hover:text-red-600 transform hover:scale-110 transition duration-200 ease-in-out">
+      <div onClick={() => onDelete(item.id)} className="text-xl p-2 cursor-pointer hover:text-red-600 transform hover:scale-110 transition duration-200 ease-in-out">
         <MdDelete />
       </div>
     </div>
@@ -41,9 +41,9 @@ const Cancale = () => {
     setCancelCount(count);
   }, [deta]);
 
-  const onDelete = (index) => {
-    dispatch(deletIndex(index));
-  };
+  const onDelete = (id) => {
+    dispatch(deletIndex(id));; // Dispatches action with the `id` for deletion
+};
 
   return (
 

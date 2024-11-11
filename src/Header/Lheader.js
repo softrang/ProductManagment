@@ -22,7 +22,7 @@ const Lheader = () => {
   <Link to="/order/review" className="w-full">
     <p className="w-full py-2 bg-violet-800 pl-5 text-lg mb-2 text-white shadow-inner hover:shadow-violet-600/50 transform hover:scale-105 transition-transform duration-200">Review</p>
   </Link>
-  <Link to="/order/success" className="w-full">
+  <Link to="order/sucsess" className="w-full">
     <p className="w-full py-2 bg-violet-800 pl-5 text-lg mb-2 text-white shadow-inner hover:shadow-violet-600/50 transform hover:scale-105 transition-transform duration-200">Success</p>
   </Link>
   <Link to="/order/complete" className="w-full">
