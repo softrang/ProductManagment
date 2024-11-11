@@ -17,6 +17,7 @@ import Review from './Page/Review';
 import Sucess from './Page/Sucess';
 import Complete from './Page/Complete';
 import Cancel from './Page/Cancel';
+import Update from './Page/Update';
 
 
 
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "order/cancel",
     element: <Cancel/>,
+  },
+  {
+    path: "order/update",
+    element: <Update/>,
   },
 
 ]);

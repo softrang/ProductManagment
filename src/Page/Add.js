@@ -21,7 +21,7 @@ const Add = () => {
 
   const handleAddProduct = () => {
     dispatch(addProduct());
-   
+    dispatch(resetForm());
     setShowCongras(true); // Show the message
     setShowAdd(false);
   

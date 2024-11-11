@@ -9,12 +9,15 @@ const Theader = () => {
         <h1 className='text-4xl font-mono text-center'>Softrang</h1>
 
         </div>
-        <div className='w-6/12'>
-        <input type='search' className='w-full h-[5vh] rounded-xl outline-0 bg-zinc-900 px-2 uppercase border-2 border-zinc-300'/>
+        <div className="w-7/12 mx-auto">
+  <input 
+    type="search" 
+    placeholder="Search..." 
+    className="w-full h-[5vh] rounded-lg outline-none bg-gray-100 px-4 text-gray-800 placeholder-gray-500 uppercase border border-gray-300 shadow-sm   transition duration-200"
+  />
+</div>
 
-        </div>
-
-        <div className='w-3/12 flex items-center justify-end'>
+        <div className='w-2/12 flex items-center justify-end'>
         <div className='w-[3vw] h-[5vw] flex items-center justify-end text-2xl relative'>
             <p className='text-base text-rose-700 absolute top-4'>1</p>
         <IoIosNotifications />
