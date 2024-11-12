@@ -76,9 +76,9 @@ setErrors(newErrors);
     <div>
       <Theader />
       
-      <div className='w-full h-max   p-5 pt-10 flex gap-5 flex-wrap justify-center bg-gray-900'>
+      <div className='w-90 m-auto h-max   p-5 pt-10 flex gap-5 flex-wrap justify-center bg-gray-900'>
   {showAdd && (
-    <div className='w-5/12  h-max  p-4 shadow-lg shadow-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg'>
+    <div className=' xsm:w-full md:w-6/12  h-max  p-4 shadow-lg shadow-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg'>
       <div className='w-full'>
         <label className='py-2 text-gray-300'>Product Title</label>
         <input
@@ -86,7 +86,7 @@ setErrors(newErrors);
           type='text'
           name='title'
           value={from.title || ''}
-          className='w-full h-[5vh] rounded-lg outline-none bg-gray-600 px-3 my-2 text-gray-100 shadow-inner'
+          className='w-full h-8 rounded-lg outline-none bg-gray-600 px-3 my-2 text-gray-100 shadow-inner'
         />
          {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
       </div>
@@ -96,7 +96,7 @@ setErrors(newErrors);
           onChange={handleValue}
           name='dic'
           value={from.dic || ''}
-          className='w-full h-[20vh] rounded-lg outline-none bg-gray-600 px-3 my-2 resize-none text-gray-100 shadow-inner'
+          className='w-full h-28 rounded-lg outline-none bg-gray-600 px-3 my-2 resize-none text-gray-100 shadow-inner'
         />
          {errors.dic && <p className="text-red-500 text-sm">{errors.dic}</p>}
       </div>
@@ -108,16 +108,16 @@ setErrors(newErrors);
           name='price'
           value={from.price || ''}
          
-          className='w-full h-[5vh] rounded-lg outline-none bg-gray-600 px-3 my-2 text-gray-100 shadow-inner'
+          className='w-full h-8 rounded-lg outline-none bg-gray-600 px-3 my-2 text-gray-100 shadow-inner'
         />
          {errors.price && <p className="text-red-500 text-sm">{errors.price}</p>}
       </div>
-      <div className='w-full h-[5vh]'>
+      <div className='w-full h-8'>
         <select
           onChange={handleValue}
           name='status'
           value={from.status || ''}
-          className='w-full h-full bg-gray-700 outline-none border border-zinc-900 text-gray-100 shadow'
+          className='w-full h-full   bg-gray-700 outline-none border border-zinc-900 text-gray-100 shadow'
         >
           <option value='' className='bg-gray-600'>Select Status</option>
           <option value='All Order' className='bg-gray-600'>All Order</option>
@@ -138,14 +138,14 @@ setErrors(newErrors);
     </div>
   )}
   {showCongras && (
-    <div className='w-5/12 h-max border border-zinc-300 p-4 shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg'>
-      <h1 className='text-5xl font-mono text-gray-200'>Congratulations</h1>
-      <p className='text-xl py-5 text-gray-300'>Your Product was successfully added</p>
-      <div className='w-full flex gap-10 items-center justify-end'>
+    <div className='w-max p-5 h-max border border-gray-700  shadow-lg shadow-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg'>
+      <h1 className=' xsm:text-2xl md:text-5xl text-center font-mono text-gray-200'>Congratulations</h1>
+      <p className='text-xl py-5 text-gray-300 text-center'>Your Product was successfully added</p>
+      <div className='w-full flex gap-10 xsm:flex-col sm:flex-row items-center justify-end'>
         <Link to="/">
-          <span className='px-4 py-2 bg-indigo-600 rounded-lg cursor-pointer shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all'>Back to Home</span>
+          <span className='px-4 py-2 bg-gray-700 shadow-inner shadow-gray-900 rounded-lg cursor-pointer  hover:shadow-lg transform hover:-translate-y-1 transition-all'>Back to Home</span>
         </Link> 
-        <p onClick={handleBack} className='px-4 py-2 bg-sky-600 rounded-lg cursor-pointer shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all'>Add Again</p>
+        <p onClick={handleBack} className='px-4 py-2 bg-gray-700 rounded-lg cursor-pointer shadow-inner shadow-gray-900 hover:shadow-lg transform hover:-translate-y-1 transition-all'>Add Again</p>
       </div>
     </div>
   )}

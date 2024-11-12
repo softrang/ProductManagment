@@ -18,6 +18,7 @@ import Sucess from './Page/Sucess';
 import Complete from './Page/Complete';
 import Cancel from './Page/Cancel';
 import Update from './Page/Update';
+import ScrollToTop from './ScrollToTop';
 
 
 
@@ -64,7 +65,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <RouterProvider router={router} />
+   
+    <RouterProvider router={router}>
+    <ScrollToTop />
+    </RouterProvider>
     </Provider>,
   </React.StrictMode>
 );

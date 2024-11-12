@@ -35,7 +35,7 @@ const Review = () => {
           <span className="text-gray-400">Review</span>
         </div>
 
-        {reviewItems.length > 0 ? (
+       <div className='w-full overflow-x-auto'>
           <table className="w-full shadow-inner shadow-gray-700 rounded-lg bg-gray-800">
             <thead className="bg-gray-900 border-b border-gray-800 text-gray-300">
               <tr>
@@ -49,7 +49,8 @@ const Review = () => {
               </tr>
             </thead>
             <tbody>
-              {reviewItems.filter((item) => 
+            {reviewItems.length > 0 ? (
+              reviewItems.filter((item) => 
                item.title.toLowerCase().includes(searchQuery.toLowerCase())||
                item.status.toLowerCase().includes(searchQuery.toLowerCase())
       
@@ -78,14 +79,16 @@ const Review = () => {
                     </div>
                   </td>
                 </tr>
-              ))}
+              )) ) : (
+                <tr>
+                <td colSpan="7" className="text-center text-gray-400 text-lg font-medium py-2 rounded-md shadow-md">
+                  Sorry, you haven't created any orders yet.
+                </td>
+              </tr>
+              )}
             </tbody>
           </table>
-        ) : (
-          <div className="text-center text-gray-400 text-lg font-medium py-2 rounded-md shadow-md">
-            Sorry, you haven't created any canceled orders yet.
           </div>
-        )}
       </div>
     </div>
   );

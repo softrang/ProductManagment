@@ -34,8 +34,8 @@ const Complete = () => {
           <span className='text-zinc-50'>/</span>
           <span className="text-gray-400">Complete</span>
         </div>
-
-        {CompleteItems.length > 0 ? (
+<div className='w-full overflow-x-auto'> 
+       
           <table className="w-full shadow-inner shadow-gray-700 rounded-lg bg-gray-800">
             <thead className="bg-gray-900 border-b border-gray-800 text-gray-300">
               <tr>
@@ -49,7 +49,8 @@ const Complete = () => {
               </tr>
             </thead>
             <tbody>
-              {CompleteItems.filter((item) => 
+            {CompleteItems.length > 0 ? (
+              CompleteItems.filter((item) => 
                item.title.toLowerCase().includes(searchQuery.toLowerCase())||
                item.status.toLowerCase().includes(searchQuery.toLowerCase())
       
@@ -78,14 +79,16 @@ const Complete = () => {
                     </div>
                   </td>
                 </tr>
-              ))}
+              ))) : (
+                <tr className="text-center text-gray-400 text-lg font-medium py-2 rounded-md shadow-md">
+                  <td colSpan="7" className='py-2'>  
+                  Sorry, you haven't created any canceled orders yet. </td>
+                </tr>
+              )}
             </tbody>
           </table>
-        ) : (
-          <div className="text-center text-gray-400 text-lg font-medium py-2 rounded-md shadow-md">
-            Sorry, you haven't created any canceled orders yet.
-          </div>
-        )}
+        
+        </div>
       </div>
     </div>
   );

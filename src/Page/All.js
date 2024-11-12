@@ -43,7 +43,7 @@ console.log(deta)
     <div>
       <Theader searchQuery={searchQuery} handleSearch={handleSearch} />
       <div className="w-90 m-auto h-max bg-gray-900  ">
-        <div className="w-full h-[8vh] flex items-center justify-center space-x-2 text-gray-600 text-sm font-medium">
+        <div className="w-full h-max py-5 flex items-center justify-center space-x-2 text-gray-600 text-sm font-medium">
           <span>
             <Link to="/" className="hover:text-blue-300 transition duration-200 ease-in-out text-gray-400">
               Home
@@ -52,7 +52,7 @@ console.log(deta)
           <span className="text-zinc-50">/</span>
           <span className="text-gray-400">All Order</span>
         </div>
-
+        <div className='w-full  overflow-x-auto'> 
         <table className="w-full h-max shadow-lg rounded-lg bg-gray-800">
           <thead className="bg-gray-950 border-b border-gray-800 text-gray-300">
             <tr>
@@ -78,7 +78,7 @@ console.log(deta)
                   <td className="px-4 py-2 text-center">{item.price}</td>
                   <td className="px-4 py-2 text-center">{item.timestamp || "2023-01-01"}</td>
                   <td className="px-4 py-2 text-center">{item.dic}</td>
-                  <td className="px-4 py-2 flex justify-center font-medium">
+                  <td className="px-4 py-2 flex  justify-center font-medium">
                     <span className={`px-4 py-2 font-medium ${statusStyles[item.status] || ""}`}>
                       {item.status}
                     </span>
@@ -103,6 +103,7 @@ console.log(deta)
             )}
           </tbody>
         </table>
+        </div>
       </div>
     </div>
   );

@@ -35,7 +35,8 @@ const Cancel = () => {
           <span className="text-gray-400">Cancel</span>
         </div>
 
-        {canceledItems.length > 0 ? (
+        <div className='w-full overflow-x-auto'>
+        
           <table className="w-full shadow-lg rounded-lg bg-gray-800 ">
             <thead className="bg-gray-900 border-b border-gray-800 text-gray-300">
               <tr>
@@ -49,7 +50,8 @@ const Cancel = () => {
               </tr>
             </thead>
             <tbody>
-              {canceledItems.filter((item) => 
+            {canceledItems.length > 0 ? (
+              canceledItems.filter((item) => 
                item.title.toLowerCase().includes(searchQuery.toLowerCase())||
                item.status.toLowerCase().includes(searchQuery.toLowerCase())
       
@@ -78,14 +80,18 @@ const Cancel = () => {
                     </div>
                   </td>
                 </tr>
-              ))}
+
+              )) ) : (
+                <tr className="text-center text-gray-400 text-lg font-medium py-2 rounded-md shadow-md">
+                  <td colSpan="7" className='py-2'> 
+                  Sorry, you haven't created any canceled orders yet. </td>
+                </tr>
+              )}
             </tbody>
           </table>
-        ) : (
-          <div className="text-center text-gray-400 text-lg font-medium py-2 rounded-md shadow-md">
-            Sorry, you haven't created any canceled orders yet.
-          </div>
-        )}
+       
+
+</div>
       </div>
     </div>
   );
