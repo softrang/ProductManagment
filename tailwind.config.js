@@ -9,7 +9,9 @@ module.exports = {
         'oasim1': '#00153D',
         'oasim2': '#0A2472',
       },
-
+      width: {
+        '90': '90%',
+      }
     },
   },
   plugins: [],

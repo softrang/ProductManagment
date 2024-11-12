@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom';
 import { deletIndex } from '../redux/slices/productslices';
 
 const PendingItem = ({ item, index, onDelete }) => (
-  <div className="order-item pending mt-4 bg-white p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-    <h2 className="text-lg font-bold text-gray-800 line-clamp-1 ">{item.title}</h2>
-    <p className="text-base text-gray-600 line-clamp-2 ">{item.dic}</p>
-    <p className="text-sm text-gray-800 font-medium">Price: {item.price}</p>
-    <p className="text-sm text-gray-800 font-medium">Status: {item.status}</p>
-    <div className="flex justify-around text-gray-700">
+  <div className="order-item pending mt-4 bg-gray-900 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out shadow-inner">
+    <h2 className="text-lg font-bold text-green-400 line-clamp-1 ">{item.title}</h2>
+    <p className="text-base text-gray-200 line-clamp-2 ">{item.dic}</p>
+    <p className="text-base text-rose-500 font-medium">Price: {item.price}</p>
+    <p className="text-sm text-lime-500 font-medium">Date: {item.timestamp}</p>
+    <div className="flex justify-around text-gray-500">
       <div className="text-xl p-2 cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
         <GrView />
       </div>
@@ -43,7 +43,7 @@ const Pending = () => {
 };
 
   return (
-    <div className="w-1/4 h-max max-h-[65vh] bg-gradient-to-br from-oasim2 to-oasim1 p-4 rounded-lg shadow-md shadow-oasim2 overflow-hidden">
+    <div className="w-1/4 h-max max-h-[65vh] bg-gradient-to-br from-gray-800 to-gray-800 p-4 rounded-lg shadow-md shadow-gray-800 overflow-hidden">
       <p className="text-center text-xl bg-gradient-to-r from-amber-700 to-amber-600 text-white font-semibold py-3 rounded-t-lg shadow-inner">
         Pending <span>({pendingCount})</span>
       </p>

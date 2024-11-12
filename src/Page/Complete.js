@@ -26,26 +26,26 @@ const Complete = () => {
     <div>
       <Theader searchQuery={searchQuery} handleSearch={handleSearch} />
       
-      <div className='w-full h-[90vh] border border-zinc-300 fixed bottom-0'>
-        <div className="w-full h-[5vh] flex items-center justify-center space-x-2 text-gray-600 text-sm font-medium">
+      <div className='w-90 m-auto h-max bg-gray-800'>
+        <div className="w-full h-max py-5 flex items-center justify-center space-x-2 text-gray-600 text-sm font-medium">
           <span>
-            <Link to="/" className="hover:text-blue-300 transition duration-200 ease-in-out text-white">Home</Link>
+            <Link to="/" className="hover:text-blue-300 transition duration-200 ease-in-out text-gray-400">Home</Link>
           </span>
           <span className='text-zinc-50'>/</span>
-          <span className="text-zinc-50">Complete</span>
+          <span className="text-gray-400">Complete</span>
         </div>
 
         {CompleteItems.length > 0 ? (
-          <table className="w-full shadow-lg rounded-lg bg-zinc-800">
-            <thead className="bg-zinc-300 border-b">
+          <table className="w-full shadow-inner shadow-gray-700 rounded-lg bg-gray-800">
+            <thead className="bg-gray-900 border-b border-gray-800 text-gray-300">
               <tr>
-                <th className="px-4 py-3 text-center font-semibold text-gray-700">Sl No</th>
-                <th className="px-4 py-3 text-center font-semibold text-gray-700">Title</th>
-                <th className="px-4 py-3 text-center font-semibold text-gray-700">Price</th>
-                <th className="px-4 py-3 text-center font-semibold text-gray-700">Date</th>
-                <th className="px-4 py-3 text-center font-semibold text-gray-700">Description</th>
-                <th className="px-4 py-3 text-center font-semibold text-gray-700">Status</th>
-                <th className="px-4 py-3 text-center font-semibold text-gray-700">Action</th>
+                <th className="px-4 py-3 text-center font-semibold ">Sl No</th>
+                <th className="px-4 py-3 text-center font-semibold ">Title</th>
+                <th className="px-4 py-3 text-center font-semibold ">Price</th>
+                <th className="px-4 py-3 text-center font-semibold ">Date</th>
+                <th className="px-4 py-3 text-center font-semibold ">Description</th>
+                <th className="px-4 py-3 text-center font-semibold ">Status</th>
+                <th className="px-4 py-3 text-center font-semibold ">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -55,23 +55,23 @@ const Complete = () => {
       
               ).reverse()
               .map((item, index) => (
-                <tr key={item.id || index} className="hover:bg-zinc-900 hover:text-zinc-50 transition duration-200 ease-in-out border-b text-white">
+                <tr key={item.id || index} className="hover:bg-gray-900 hover:text-gray-400 transition duration-200 ease-in-out border-b border-gray-900 text-gray-300">
                   <td className="px-4 py-2 text-center">{index + 1}</td>
                   <td className="px-4 py-2 text-center">{item.title}</td>
                   <td className="px-4 py-2 text-center">{item.price}</td>
                   <td className="px-4 py-2 text-center">{item.timestamp}</td>
                   <td className="px-4 py-2 text-center">{item.dic}</td>
                   <td className="px-4 py-2 flex justify-center font-medium">
-                    <span className="px-4 py-2 bg-rose-600 font-medium">{item.status}</span>
+                    <span className="px-4 py-2 bg-sky-600 font-medium text-gray-900">{item.status}</span>
                   </td>
                   <td className="px-4 py-2">
                     <div className="flex justify-around text-zinc-100">
-                      <div className="text-xl p-2 cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
+                      <div className="text-xl p-2  hidden cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
                         <GrView />
                       </div>
-                      <div className="text-xl p-2 cursor-pointer hover:text-blue-600 transform hover:scale-110 transition duration-200 ease-in-out">
-                        <FaRegEdit />
-                      </div>
+                      <Link to="/order/update" state={{ data: item, index }}>
+                        <div className="text-xl p-2 cursor-pointer hover:text-blue-600 transform hover:scale-110 transition duration-200 ease-in-out" aria-label="Edit Order"><FaRegEdit /></div>
+                      </Link>
                       <div onClick={() => onDelete(item.id)} className="text-xl p-2 cursor-pointer hover:text-red-600 transform hover:scale-110 transition duration-200 ease-in-out">
                         <MdDelete />
                       </div>

@@ -8,7 +8,7 @@ import Complete from '../Compo/Complete'
 
 const Body = () => {
   return (
-    <div className='w-10/12 h-[90vh] fixed right-0 bottom-0 bg-oasim1 p-5 flex gap-5 flex-wrap justify-center overflow-y-scroll'>
+    <div className='w-10/12 h-[90vh] fixed right-0 bottom-0 bg-gray-950 p-5 flex gap-5 flex-wrap justify-center overflow-y-scroll'>
         <Allorder/>
         <Pending/>
         <Review/>
