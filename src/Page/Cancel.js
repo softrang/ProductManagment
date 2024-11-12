@@ -66,12 +66,12 @@ const Cancel = () => {
                   </td>
                   <td className="px-4 py-2">
                     <div className="flex justify-around text-zinc-100">
-                      <div className="text-xl p-2 cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
+                      <div className="text-xl p-2 hidden cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
                         <GrView />
                       </div>
-                      <div className="text-xl p-2 cursor-pointer hover:text-blue-600 transform hover:scale-110 transition duration-200 ease-in-out">
-                        <FaRegEdit />
-                      </div>
+                      <Link to="/order/update" state={{ data: item, index }}>
+                        <div className="text-xl p-2 cursor-pointer hover:text-blue-600 transform hover:scale-110 transition duration-200 ease-in-out" aria-label="Edit Order"><FaRegEdit /></div>
+                      </Link>
                       <div onClick={() => onDelete(item.id)} className="text-xl p-2 cursor-pointer hover:text-red-600 transform hover:scale-110 transition duration-200 ease-in-out">
                         <MdDelete />
                       </div>

@@ -13,7 +13,7 @@ const PendingItem = ({ item, index, onDelete }) => (
     <p className="text-base text-rose-500 font-medium">Price: {item.price}</p>
     <p className="text-sm text-lime-500 font-medium">Date: {item.timestamp}</p>
     <div className="flex justify-around text-gray-500">
-      <div className="text-xl p-2 cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
+      <div className="text-xl p-2 hidden cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
         <GrView />
       </div>
       <Link to="order/update" state={{ data: item, index }}>
@@ -28,7 +28,7 @@ const PendingItem = ({ item, index, onDelete }) => (
   </div>
 );
 
-const Pending = () => {
+const Pending = ({searchQuery}) => {
   const dispatch = useDispatch();
   const deta = useSelector((state) => state.product.deta);
   const [pendingCount, setPendingCount] = useState(0);
@@ -42,15 +42,24 @@ const Pending = () => {
     dispatch(deletIndex(id));; // Dispatches action with the `id` for deletion
 };
 
+const data = deta.filter(item => item.status === "Pending").slice(-2).reverse()
+
+
+
+
   return (
-    <div className="w-1/4 h-max max-h-[65vh] bg-gradient-to-br from-gray-800 to-gray-800 p-4 rounded-lg shadow-md shadow-gray-800 overflow-hidden">
+    <div className="w-full h-max  bg-gradient-to-br from-gray-800 to-gray-800 p-4 rounded-lg shadow-md shadow-gray-800 ">
       <p className="text-center text-xl bg-gradient-to-r from-amber-700 to-amber-600 text-white font-semibold py-3 rounded-t-lg shadow-inner">
         Pending <span>({pendingCount})</span>
       </p>
 
-      {deta && deta.length > 0 ? (
-        deta
-          .filter(item => item.status === "Pending").reverse()
+      {data && data.length > 0 ? (
+        data.filter((item) => 
+          item.title.toLowerCase().includes(searchQuery.toLowerCase())||
+          item.status.toLowerCase().includes(searchQuery.toLowerCase())
+ 
+         )
+          
           .map((item, index) => (
             <PendingItem key={index} item={item} index={index} onDelete={onDelete} />
           ))

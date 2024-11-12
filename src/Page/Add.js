@@ -76,7 +76,7 @@ setErrors(newErrors);
     <div>
       <Theader />
       
-      <div className='w-full h-[90vh] fixed right-0 bottom-0  p-5 flex gap-5 flex-wrap justify-center bg-gray-900'>
+      <div className='w-full h-max   p-5 pt-10 flex gap-5 flex-wrap justify-center bg-gray-900'>
   {showAdd && (
     <div className='w-5/12  h-max  p-4 shadow-lg shadow-gray-700 transform hover:scale-105 transition-transform duration-300 ease-in-out bg-gray-800 rounded-lg'>
       <div className='w-full'>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Lheader = () => {
   return (
-    <div className="w-2/12 h-[90vh] fixed left-0 bottom-0 flex flex-col items-center justify-start bg-gray-950 shadow-lg shadow-gray-700/50 transform transition-transform duration-300 ">
+    <div className="w-2/12 h-max z-0 flex flex-col items-center justify-start bg-gray-900 shadow-lg shadow-gray-700/50 transform transition-transform duration-300 ">
   <Link to="order/add" className="my-5">
     <span className="px-4 py-2 bg-green-600 rounded-lg my-5 shadow-md hover:shadow-lg transition-all duration-300">
       Add Order

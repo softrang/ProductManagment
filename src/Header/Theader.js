@@ -6,7 +6,7 @@ const Theader = ({searchQuery, handleSearch}) => {
 
 
   return (
-    <div className='w-90 m-auto h-max py-5 flex items-center justify-center sticky top-0  bg-gray-900 shadow-md shadow-gray-600'>
+    <div className='w-90 m-auto h-max py-5 flex items-center justify-center sticky top-0 z-50  bg-gray-900 shadow-md shadow-gray-600'>
   <div className='w-3/12'>
     <h1 className='text-4xl font-mono text-center text-gray-100 transform hover:scale-105 transition-transform duration-300 ease-in-out shadow-lg'>Softrang</h1>
   </div>

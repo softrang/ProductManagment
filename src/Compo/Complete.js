@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 
 
 const CompleteItem = ({ item, index, onDelete }) => (
-  <div className="order-item pending mt-4 bg-white p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-    <h2 className="text-lg font-bold text-gray-800 line-clamp-1  ">{item.title}</h2>
-    <p className="text-base text-gray-600 line-clamp-2 ">{item.dic}</p>
-    <p className="text-sm text-gray-800 font-medium">Price: {item.price}</p>
-    <p className="text-sm text-gray-800 font-medium">Status: {item.status}</p>
-    <div className="flex justify-around text-gray-700">
-      <div className="text-xl p-2 cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
+  <div className="order-item pending mt-4 bg-gray-900 p-4 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out shadow-inner">
+    <h2 className="text-lg font-bold text-green-400 line-clamp-1 ">{item.title}</h2>
+    <p className="text-base text-gray-200 line-clamp-2 ">{item.dic}</p>
+    <p className="text-base text-rose-500 font-medium">Price: {item.price}</p>
+    <p className="text-sm text-lime-500 font-medium">Date: {item.timestamp}</p>
+    <div className="flex justify-around text-gray-500">
+      <div className="text-xl hidden p-2 cursor-pointer hover:text-green-600 transform hover:scale-110 transition duration-200 ease-in-out">
         <GrView />
       </div>
       <Link to="order/update" state={{ data: item, index }}>
@@ -34,7 +34,7 @@ const CompleteItem = ({ item, index, onDelete }) => (
 
 
 
-const Complete = () => {
+const Complete = ({searchQuery}) => {
 
   const dispatch = useDispatch();
   const deta = useSelector((state) => state.product.deta);
@@ -49,16 +49,22 @@ const Complete = () => {
     dispatch(deletIndex(id));; // Dispatches action with the `id` for deletion
 };
 
+const data = deta.filter(item => item.status === "Complete").slice(-2).reverse()
+
 
   return (
-    <div className="w-1/4 h-max max-h-[65vh] bg-gradient-to-br from-oasim2 to-oasim1 p-4 rounded-lg shadow-md shadow-oasim2 overflow-hidden">
+    <div className="w-full h-max  bg-gradient-to-br from-gray-800 to-gray-800 p-4 rounded-lg shadow-md shadow-gray-800">
       <p className="text-center text-xl bg-gradient-to-r from-green-600 to-green-600 text-white font-semibold py-3 rounded-t-lg shadow-inner">
       Complete <span>({CompleteCount})</span>
       </p>
 
-      {deta && deta.length > 0 ? (
-        deta
-          .filter(item => item.status === "Complete").reverse()
+      {data && data.length > 0 ? (
+        data.filter((item) => 
+          item.title.toLowerCase().includes(searchQuery.toLowerCase())||
+          item.status.toLowerCase().includes(searchQuery.toLowerCase())
+ 
+         )
+         
           .map((item, index) => (
             <CompleteItem key={index} item={item} index={index} onDelete={onDelete} />
           ))
