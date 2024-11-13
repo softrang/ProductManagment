@@ -18,11 +18,10 @@ import Sucess from './Page/Sucess';
 import Complete from './Page/Complete';
 import Cancel from './Page/Cancel';
 import Update from './Page/Update';
-import ScrollToTop from './ScrollToTop';
-
 
 
 const router = createBrowserRouter([
+  
   {
     path: "/",
     element: <App />,
@@ -66,9 +65,8 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
    
-    <RouterProvider router={router}>
-    <ScrollToTop />
-    </RouterProvider>
+    <RouterProvider router={router}/>
+    
     </Provider>,
   </React.StrictMode>
 );

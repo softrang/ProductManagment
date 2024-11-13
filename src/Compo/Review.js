@@ -56,7 +56,7 @@ const data = deta.filter(item => item.status === "Review").slice(-2).reverse()
 
   return (
     <div className="w-full h-max  bg-gradient-to-br from-gray-800 to-gray-800 p-4 rounded-lg shadow-md shadow-gray-800 ">
-    <p className="text-center text-xl bg-gradient-to-r from-amber-700 to-green-600 text-white font-semibold py-3 rounded-t-lg shadow-inner">
+    <p className="text-center text-xl bg-gradient-to-r from-gray-700 to-gray-600 text-white font-semibold py-3 rounded-t-lg shadow-inner shadow-gray-800">
       Review <span>({reviewCount})</span>
     </p>
 
